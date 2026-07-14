@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-sand text-olive-900 font-body antialiased;
+  background-image: radial-gradient(circle at 15% 10%, rgba(113, 136, 74, 0.10), transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(214, 92, 104, 0.10), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(113, 136, 74, 0.08), transparent 40%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-rose-200 text-olive-900;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #adbf85 transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #576b39;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/50 backdrop-blur-md border border-white/60 shadow-glow;
+  }
+
+  .glass-strong {
+    @apply bg-white/70 backdrop-blur-lg border border-white/70 shadow-glow;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-olive-700 text-sand px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-olive-800 hover:shadow-soft active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full glass text-olive-800 px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-white/70 hover:shadow-soft active:scale-95;
+  }
+
+  .btn-rose {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 text-white px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-rose-600 hover:shadow-soft active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-olive-200/70 bg-white/60 backdrop-blur-sm px-4 py-3 text-olive-900 placeholder:text-olive-400 outline-none transition-all duration-200 focus:border-olive-400 focus:bg-white/90 focus:shadow-soft;
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-rose-600 font-semibold;
+  }
+}
